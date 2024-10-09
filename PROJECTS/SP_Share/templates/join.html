@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+	<form method="POST">
+		<label>First Name:</label>
+		<input autocomplete="off" type="text" name="first-name" autofocus placeholder="Enter your First Name" required/></br>
+		<label>Last Name:</label>
+		<input autocomplete="off" type="text" name="last-name" autofocus placeholder="Enter your Last Name" required/></br>
+		<label>Username:</label>
+		<input autocomplete="off" type="text" name="user-name" autofocus placeholder="Enter your First Name" required/></br>
+		<label>E-mail:</label>
+		<input autocomplete="off" type="e-mail" name="e-mail" autofocus placeholder="Enter your e-mail address" required/></br>
+		<label>Password</label>
+		<input autocomplete="off" type="password" name="passwd" autofocus placeholder="Enter your password" required/></br>
+		<label>Password</label>
+		<input autocomplete="off" type="password" name="passwd-conf" autofocus placeholder="Re-enter your password" required/></br>
+		<input type="submit" name="Submit"/></br>
+	</form>
+
+	{% if invalid_entry %}
+		<h2>Unable to create a user for the username or e-mail provided</h2>
+	{% endif %}
+	
+	{% if invalid_password %}
+		<h2>Password must match</h2>
+	{% endif %}
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1>Welcome, {{ username }}</h1>
+
+<button class="btn" type="button" onclick="window.location.href='{{ url_for('logout') }}';">Log Out</button>
+
+{% endblock %}
